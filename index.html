@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZSolution</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        body {
+            background-image: url('background.jpeg');
+            background-size: cover;
+
+            background-repeat: no-repeat;
+        }
+
+        .countdown-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #countdown {
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+<div class="countdown-container">
+    <div id="countdown" style="margin: 0px 20px"></div>
+</div>
+
+<script>
+    function countdown() {
+        const targetDate = new Date("December 31, 2024 00:00:00").getTime();
+        const now = new Date().getTime();
+        const timeLeft = targetDate - now;
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        // const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        // const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        // const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML =
+            "Còn lại: "+ days + " Ngày ";
+
+        if (timeLeft < 0) {
+            document.getElementById("countdown").innerHTML = "Đang diễn ra";
+        }
+    }
+
+    setInterval(countdown, 1000);
+</script>
+</body>
+</html>
