@@ -13,33 +13,35 @@
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
-            align-items: center;
+            /*align-items: center;*/
             color: white;
             text-align: center;
         }
 
         body {
-            background-image: url('background.jpeg');
+            background-image: url('background.png');
             background-size: cover;
-
+            background-position: center center;
             background-repeat: no-repeat;
         }
 
         .countdown-container {
+            margin-top: 100px;
 /*             background-color: rgba(0, 0, 0, 0.5); */
             padding: 20px;
             border-radius: 10px;
         }
 
         #countdown {
-            font-size: 4em;
+            font-size: 5em;
             text-shadow: 1px 5px 8px #000;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 <div class="countdown-container">
-    <div id="countdown" style="margin: 0px 20px"></div>
+    <div id="countdown"></div>
 </div>
 <script>
     function countdown() {
@@ -51,9 +53,9 @@
         // const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         // const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
         // const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-        
+
         document.getElementById("countdown").innerHTML =
-            "Còn "+ days + " Ngày ";
+            "CÒN "+ days + " NGÀY ";
 
         if (timeLeft < 0) {
             document.getElementById("countdown").innerHTML = "Hoàn thành mục tiêu";
